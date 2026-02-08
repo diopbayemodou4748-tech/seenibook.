@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-sacle=1.0">
+  <title>SeenIbooks</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  
+<div class="logo">
+  <img src="images/log.jpg.png" alt="SeenIbooks" class="site-logo"loading="lazy">  
+</div>
+
+
+  <input type="text" id="search" 
+
+placeholder="Rechercher un ebook...">
+
+ <div class="cart" onclick="openCart()">
+🛒 <span id="cart-count">0</span>
+</div>
+
+</header>
+ 
+<div class="categories">
+  <button class="category-btn active" data-category="all">Tous</button>
+  <button class="category-btn" data-category="development">Développement personnel</button>
+  <button class="category-btn" data-category="studies">Études</button>
+  <button class="category-btn" data-category="business">Business 
+</section>
+</button>
+  <button class="category-btn" data-category="santé">santé</button>
+</div>
+
+<section class="ebooks" id="ebook-list">
+
+  
+<div class="ebook" data-name="Après le Bac" data-price="750" data-category="studies">
+  <img src="images/bac.jpg.jpg">
+  <h3>Après le Bac que faire selon ta série ?</h3>
+  <p>Découvre les filières selon ta série et choisis ton parcours</p>
+  <p class="price">750 F</p>
+  <button onclick="addToCart('Après le Bac',750)">Ajouter au panier</button>
+  <button class="get" onclick="getNow('Après le Bac',750)">Obtenir</button>
+</div>
+
+
+<div class="ebook" data-name="Conjuguer faculement" data-price="750" data-category="studies">
+  <img src="images/conjuguer.jpg.png">
+  <h3>Conjuguer facilement</h3>
+  <p>Apprendre à conjuguer les verbes français facilement</p>
+  <p class="price">750 F</p>
+  <button onclick="addToCart('conjuguer facilement',750)">Ajouter au panier</button>
+  <button class="get" onclick="getNow('conjuguer facilement',750)">Obtenir</button>
+</div>
+
+<div class="ebook" data-name="Comment gérer son temps d'étude" data-price="750" data-category="studies">
+  <img src="images/temps.jpg.png">
+  <h3>Comment gérer son temps d'étude ?</h3>
+  <P>Un guide pratique pour mieux organiser son temps d'études</P>
+  <p class="price">750 F</p>
+  <button onclick="addToCart('Comment gérer son temps d étude',750)">Ajouter au panier</button>
+  <button class="get" onclick="getNow('Comment gérer son temps d étude',750)">Obtenir</button>
+</div>
+<div class="ebook" data-name="La grammaire française facile" data-price="1000" data-category="studies">
+  <img src="images/gram.png">
+  <h3>La grammaire française facile</h3>
+  <P>Un guide pratique pour mieux organiser son temps d'études</P>
+  <p class="price">1000 F</p>
+  <button onclick="addToCart('La grammaire française facile',1000)">Ajouter au panier</button>
+  <button class="get" onclick="getNow('La grammaire française facile ',1000)">Obtenir</button>
+</div>
+<div class="ebook" data-name="Anglais Facile" data-price="1000" data-category="studies">
+  <img src="images/Anglais.jpg.png">
+  <h3>Anglais Facile</h3>
+  <p>Le Guide Complet pour Débutants</p>
+  <p class="price">1000 F</p>
+  <button onclick="addToCart('Anglais Facile',1000)">Ajouter au panier</button>
+  <button class="get" onclick="getNow('Anglais Facile',1000)">Obtenir</button>
+</div>
+<div class="ebook" data-name="Espagnol Facile" data-price="1000" data-category="studies">
+  <img src="images/espagol.jpg.png">
+  <h3>Espagnol Facile</h3>
+  <p>Apprendre l'espagnol facilement, étape par étape, pour débuter sans difficulté</p>
+  <p class="price">1000 F</p>
+  <button onclick="addToCart('Espagnol Facile',1000)">Ajouter au panier</button>
+  <button class="get" onclick="getNow('Espagnol Facile',1000)">Obtenir</button>
+</div>
+<div class="ebook" data-name="Les Règles d'Or de l'Orthographe" data-price="1000" data-category="studies">
+  <img src="images/orthograph.jpg.png">
+  <h3>Les Règles d'Or de l'Orthographe</h3>
+  <p>Un guide clair et pratique pour maîtriser l'orthograph facilement</p>
+  <p class="price">1000 F</p>
+  <button onclick="addToCart('Les Règles d Or de l Orthographe',1000)">Ajouter au panier</button>
+  <button class="get" onclick="getNow('Les Règles d Or de l Orthographe',1000)">Obtenir</button>
+</div> 
+<div class="ebook" data-name="Développer la Confiance en Soi" data-price="1500" data-category="development">
+  <img src="images/confiance.jpg.png">
+  <h3>Développer la Confiance en Soi</h3>
+  <p>Un guide simple pour renforcer la confiance en soi et oser avancer</p>
+  <p class="price">1500 F</p>
+  <button onclick="addToCart('Développer la Confiance en Soi',1500 )">Ajouter au panier</button>
+  <button class="get" onclick="getNow('Développer la Confiance en Soi',1500)">Obtenir</button>
+</div>
+ <div class="ebook" data-name="Bonne Santé naturelle" data-price="2500" data-category="santé">
+  <img src="images/santé.jpg.png">
+  <h3>Bonne Santé naturelle</h3>
+  <p>Les secrets ignorés par la médecine moderne</p>
+  <p class="price">2500 F</p>
+  <button onclick="addToCart('Bonne Santé naturelle',2500 )">Ajouter au panier</button>
+  <button class="get" onclick="getNow('Bonne Santé naturelle',2500)">Obtenir</button>
+</div>
+<div class="ebook" data-name="Changer ses habitudes, Changer sa vie" data-price="2000" data-category="development">
+  <img src="images/habitude.jpg.png">
+  <h3>Changer ses habitudes, Changer sa vie</h3>
+  <p>Un guide pour transformer ses habitudes et améliorer sa vie</p>
+  <p class="price">2000 F</p>
+  <button onclick="addToCart('Changer ses habitudes, Changer sa vie',2000 )">Ajouter au panier</button>
+  <button class="get" onclick="getNow('Changer ses habitudes, Changer sa vie',2000)">Obtenir</button>
+</div>
+<div class="ebook" data-name="A moi-même dans 5ans" data-price="1500" data-category="development">
+  <img src="images/lettre.jpg.png">
+  <h3>A moi-même dans 5ans</h3>
+  <p>Une lettre pour ne pas oublier qui je voulais devenir</p>
+  <p class="price">1500 F</p>
+  <button onclick="addToCart('A moi-même dans 5ans',1500 )">Ajouter au panier</button>
+  <button class="get" onclick="getNow('A moi-même dans 5ansi',1500)">Obtenir</button>
+</div>
+
+ <div class="ebook" data-name="La vie et les relations humaines" data-price="1500" data-category="development">
+  <img src="images/vie.jpg.png">
+  <h3>La vie et les relations humaines</h3>
+  <p>Comprendre, aimer, se protéger et grandir avec les autres</p>
+  <p class="price">1500 F</p>
+  <button onclick="addToCart('La vie et les relations humaines',1500 )">Ajouter au panier</button>
+  <button class="get" onclick="getNow('La vie et les relations humaines',1500)">Obtenir</button>
+</div>
+
+ <div class="ebook" data-name="Lettre à ceux qui m'ont blessé" data-price="1500" data-category="development">
+  <img src="images/let.jpg.png">
+  <h3>Lettre à ceux qui m'ont blessé</h3>
+  <p>Ecrire pour guérir, comprendre et avancer</p>
+  <p class="price">1500 F</p>
+  <button onclick="addToCart('Lettre à ceux qui m ont blessé',1500 )">Ajouter au panier</button>
+  <button class="get" onclick="getNow('Lettre à ceux qui m ont blessé',1500)">Obtenir</button>
+</div>
+
+  <div class="ebook" data-name="La Première Guerre Mondiale" data-price="1500" data-category="studies">
+  <img src="images/La Première Guérre Mondiale.jpg.png">
+  <h3>La Première Guerre Mondiale</h3>
+  <p>Un guide simple pour comprendre l'essentiel de la première Guerre mondiale</p>
+  <p class="price">750 F</p>
+  <button onclick="addToCart('La Première Guerre Mondiale',1500 )">Ajouter au panier</button>
+  <button class="get" onclick="getNow('La Première Guerre Mondiale',1500)">Obtenir</button>
+</div>
+ <div class="ebook" data-name="Réussir la Série S" data-price="1500" data-category="studies">
+  <img src="images/s.jpg.png">
+  <h3>Réussir la Série S </h3>
+  <p>Un guide pratique pour réussir la Série S</p>
+  <p class="price">1500 F</p>
+  <button onclick="addToCart('Réussir la Série S',1500 )">Ajouter au panier</button>
+  <button class="get" onclick="getNow('Réussir la Série S',1500)">Obtenir</button>
+</div>
+ <div class="ebook" data-name="Comprendre le marketing digital" data-price="3000" data-category="business">
+  <img src="images/markting.png">
+  <h3>Comprendre le marketing digital</h3>
+  <p>Découvrir les bases du marketing digital pour réussir sur internet</p>
+  <p class="price">3000 F</p>
+  <button onclick="addToCart('Comprendre le marketing digital',3000 )">Ajouter au panier</button>
+  <button class="get" onclick="getNow('Comprendre le marketing digital',3000)">Obtenir</button>
+</div>
+ <div class="ebook" data-name="Devenir un créateur de contenu" data-price="3000" data-category="business">
+  <img src="images/contenu.png">
+  <h3>Devenir un créateur de contenu</h3>
+  <p>Apprendre à devenir créateur de contenu et à partager tes idées efficacement sur les réseau sociaux</p>
+  <p class="price">3000 F</p>
+  <button onclick="addToCart('Devenir un créateur de contenu',3000 )">Ajouter au panier</button>
+  <button class="get" onclick="getNow('Devenir un créateur de contenu',3000)">Obtenir</button>
+</div>
+<div class="ebook" data-name="Comment les créateurs trouvent des partenariats avec les marques" data-price="2000" data-category="business">
+  <img src="images/parte.jpg.png">
+  <h3>Comment les créateurs trouvent des partenariats avec les marques</h3>
+  <p>Les clés pour que les créateurs décrochent des partenariats avec les marques</p>
+  <p class="price">2000 F</p>
+  <button onclick="addToCart('Comment les créateurs trouvent des partenariats avec les marques',2000 )">Ajouter au panier</button>
+  <button class="get" onclick="getNow('Comment les créateurs trouvent des partenariats avec les marques',2000)">Obtenir</button>
+</div>
+</section>
+
+
+<!-- PANIER -->
+<div id="cart-modal">
+  <div class="cart-box">
+    <h2>Panier</h2>
+    <div id="cart-items"></div>
+    <p><strong>Total :</strong> <span id="total">0</span> F</p>
+    <button onclick="orderWhatsApp()">Commander via WhatsApp</button>
+    <button class="close" onclick="closeCart()">Fermer</button>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+ <div class="cart-floating" onclick="openCart()">
+  🛒
+  <span class="cart-count"></span>
+</div>
+</body>
+</html>

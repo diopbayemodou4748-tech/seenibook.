@@ -1,0 +1,548 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000000;
+}
+
+header {
+  position: relative;
+  background: #0b3c6f;
+  color: #ffffff;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+
+.site-name {
+  position: absolute;
+  left: 10%;
+  top: 50%;                     /* ✅ centre vertical */
+  transform: translate(-50%, -50%); /* ✅ centre parfait */
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+
+
+}
+
+ 
+header input {
+  padding: 7px;
+  border-radius: 400px;
+  border: none;
+}
+
+
+
+
+/* === BOUTON PANIER (HAUT DU SITE) === */
+.cart {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #c58b00, #c58b00);
+  color: #0b3c6f;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  border-radius: 30px;
+  position: relative;
+
+  box-shadow: 0 6px 16px rgba(5, 5, 5, 0.35);
+  transition: all 0.25s ease;
+}
+
+/* Effet au survol */
+.cart:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(201, 197, 7, 0.45);
+
+}
+
+/* Badge nombre d’ebooks */
+.cart .cart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+
+  background: #c58b00; /* couleur or luxe */
+  color: #c58b00;
+
+  font-size: 12px;
+  font-weight: bold;
+
+  width: 22px;
+  height: 22px;
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+  .cart {
+    padding: 7px 10px;
+    font-size: 13px;
+  }
+
+}
+
+
+.ebooks {
+  display: grid;
+  grid-template-columns: 
+
+repeat(auto-fill,minmax(180px,1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.ebook {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
+
+.ebook img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.price {
+  color: #c58b00;
+  font-weight: bold;
+}
+
+
+button {
+  margin: 6px 0;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Ajouter au panier */
+button:not(.get):not(.close) {
+  background: linear-gradient(135deg, #0b3c6f, 
+
+#1e6bb8);
+  color: white;
+}
+
+/* Obtenir */
+button.get {
+  background: linear-gradient(135deg, #c58b00, #ffcc33);
+  color: #000;
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+
+
+/* PANIER */
+#cart-modal {
+  display: none;
+
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+}
+
+.cart-box {
+  background: white;
+  width: 300px;
+  margin: 80px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.close {
+  background: red;
+
+  color: white;
+}
+
+.ebook {
+  background: #fff;
+  border-radius: 15px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,.15);
+  transition: 0.3s;
+}
+
+.ebook:hover {
+  transform: translateY(-5px);
+}
+
+.cart-box {
+  background: #fff;
+  width: 320px;
+  margin: 80px auto;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0,0,0,.3);
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #f4f4f4;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+.cart-item span {
+  font-size: 14px;
+}
+
+.remove {
+  background: red;
+  color: white;
+  border-radius: 50%;
+  width: 25px;
+
+  height: 25px;
+  font-size: 12px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.price {
+  font-size: 16px;
+  color: #c58b00;
+}
+
+ 
+.ebook-detail {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.ebook-detail img {
+  width: 280px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+.ebook-info {
+  flex: 1;
+}
+
+.ebook-info h1 {
+  margin-top: 0;
+}
+
+.ebook-info p {
+  line-height: 1.6;
+}
+
+
+.site-logo {
+  height: 40px; /* ajuste selon ton logo */
+  object-fit: cover;
+  border-radius: 0%; /* rend le logo parfaitement rond */
+  border: 0px solid #fff; /* optionnel : contour blanc */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3); /* optionnel : effet luxe */
+}
+
+
+
+.categories {
+  display: flex;
+  justify-content: center; /* centre la barre */
+  gap: 10px;               /* espace entre les boutons */
+  margin: 20px 0;
+  overflow-x: auto;        /* scroll horizontal si trop de boutons sur mobile */
+  padding: 0 10px;
+}
+
+.category-btn {
+  padding: 6px 15px;       /* petit 
+
+padding horizontal et vertical */
+  border: none;
+  border-radius: 25px;     /* arrondi complet pour effet pill */
+  cursor: pointer;
+  background: #ddd;
+  font-weight: bold;
+  white-space: nowrap;     /* texte ne casse pas */
+  width: auto;             /* important : le bouton ne s’étire pas */
+  flex: 0 0 auto;          /* le bouton reste à sa taille de contenu */
+
+  transition: 0.3s;
+}
+
+.category-btn.active,
+.category-btn:hover {
+  background: linear-gradient(135deg, #0b3c6f, #1e6bb8);
+  color: white;
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+  .cart {
+    padding: 7px 10px;
+    font-size: 13px;
+  }
+
+}
+
+
+.ebooks {
+  display: grid;
+  grid-template-columns: 
+
+repeat(auto-fill,minmax(180px,1fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+.ebook {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
+
+.ebook img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.price {
+  color: #c58b00;
+  font-weight: bold;
+}
+
+
+button {
+  margin: 6px 0;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Ajouter au panier */
+button:not(.get):not(.close) {
+  background: linear-gradient(135deg, #0b3c6f, 
+
+#1e6bb8);
+  color: white;
+}
+
+/* Obtenir */
+button.get {
+  background: linear-gradient(135deg, #c58b00, #ffcc33);
+  color: #000;
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+
+
+/* PANIER */
+#cart-modal {
+  display: none;
+
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+}
+
+.cart-box {
+  background: white;
+  width: 300px;
+  margin: 80px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.close {
+  background: red;
+
+  color: white;
+}
+
+.ebook {
+  background: #fff;
+  border-radius: 15px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,.15);
+  transition: 0.3s;
+}
+
+.ebook:hover {
+  transform: translateY(-5px);
+}
+
+.cart-box {
+  background: #fff;
+  width: 320px;
+  margin: 80px auto;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0,0,0,.3);
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #f4f4f4;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+.cart-item span {
+  font-size: 14px;
+}
+
+.remove {
+  background: red;
+  color: white;
+  border-radius: 50%;
+  width: 25px;
+
+  height: 25px;
+  font-size: 12px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.price {
+  font-size: 16px;
+  color: #c58b00;
+}
+
+ 
+.ebook-detail {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.ebook-detail img {
+  width: 280px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+.ebook-info {
+  flex: 1;
+}
+
+.ebook-info h1 {
+  margin-top: 0;
+}
+
+.ebook-info p {
+  line-height: 1.6;
+}
+
+
+.site-logo {
+  height: 30px; /* ajuste selon ton logo */
+  object-fit: cover;
+  border-radius: 0%; /* rend le logo parfaitement rond */
+  border: 0px solid #fff; /* optionnel : contour blanc */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3); /* optionnel : effet luxe */
+}
+
+
+
+.categories {
+  display: flex;
+  justify-content: center; /* centre la barre */
+  gap: 10px;               /* espace entre les boutons */
+  margin: 20px 0;
+  overflow-x: auto;        /* scroll horizontal si trop de boutons sur mobile */
+  padding: 0 10px;
+}
+
+.category-btn {
+  padding: 6px 8px;       /* petit 
+
+padding horizontal et vertical */
+  border: none;
+  border-radius: 25px;     /* arrondi complet pour effet pill */
+  cursor: pointer;
+  background: #ddd;
+  font-weight: bold;
+  white-space: nowrap;     /* texte ne casse pas */
+  width: auto;             /* important : le bouton ne s’étire pas */
+  flex: 0 0 auto;          /* le bouton reste à sa taille de contenu */
+
+  transition: 0.3s;
+}
+
+.category-btn.active,
+.category-btn:hover {
+  background: linear-gradient(135deg, #0b3c6f, #1e6bb8);
+  color: white;
+}
+
+ 
+
+ 
+@media (max-width: 768px) {
+  .cart-floating {
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+  }
+}
+
+.fly-img {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  pointer-events: none;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  z-index: 9999;
+}
+
+ 
+ 
